@@ -30,28 +30,19 @@ angular.module('todosApp', [
         url: '/',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'lg',
-        data: {
-          auth_required: false
-        }
+        controllerAs: 'lg'
       })
       .state('logout', {
         url: '/logout',
         controller: function (Auth) {
           Auth.logout();
-        },
-        data: {
-          auth_required: false
         }
       })
       .state('register', {
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: 'rg',
-        data: {
-          auth_required: false
-        }
+        controllerAs: 'rg'
       })
       .state('todos', {
         url: '/todos',
@@ -70,37 +61,25 @@ angular.module('todosApp', [
             }
             return def.promise;
           }
-        },
-        data: {
-          auth_required: true
         }
       })
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'ab',
-        data: {
-          auth_required: false
-        }
+        controllerAs: 'ab'
       })
       .state('youtube', {
         url: '/youtube',
         templateUrl: 'views/youtube.html',
         controller: 'YouTubeCtrl',
-        controllerAs: 'yt',
-        data: {
-          auth_required: true
-        }
+        controllerAs: 'yt'
       })
       .state('contact', {
         url: '/contact',
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
-        controllerAs: 'ct',
-        data: {
-          auth_required: true
-        }
+        controllerAs: 'ct'
       });
   })
   .run(['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth, User) {

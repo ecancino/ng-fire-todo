@@ -45,7 +45,7 @@ angular.module('todosApp')
   })
   .factory('User', function ($firebase, $rootScope, FIREBASE_URL) {
     var ref = new Firebase(FIREBASE_URL + '/users'),
-      users = $firebase(ref),
+      users = $firebase(ref).$asObject(),
       User = {
         create: function (authUser, username) {
           var u = this;
@@ -57,7 +57,8 @@ angular.module('todosApp')
           users.$save(authUser.id);
         },
         findById: function (id) {
-          return users.$child(id);
+          console.log(id);
+          return users.$indexFor(id);
         }
       };
     return User;

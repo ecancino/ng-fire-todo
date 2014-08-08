@@ -22,10 +22,15 @@ var Login = function ($scope, $rootScope, $state, Auth, User) {
 
   this.login = function () {
     Auth.login(this.user).then(function (authUser) {
+
+      console.log(authUser);
+      console.log($getCurrentUser());
+
+
+
       var usermetadata = User.findById(authUser.id);
       authUser.username = usermetadata.username;
       $rootScope.currentUser = authUser;
-
       $state.go('todos');
     }, function (error) {
       that.error = error.message.replace('/FirebaseSimpleLogin:/g', '');
