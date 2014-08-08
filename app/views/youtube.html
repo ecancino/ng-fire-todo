@@ -1,0 +1,19 @@
+<div class="container">
+	<h1 data-ng-show="yt.title">{{ yt.title }}</h1>
+
+	<div class="text-center">
+		<youtube width="{{yt.width}}" height="{{yt.height}}" videoid="{{yt.videoid}}"></youtube>
+
+		<select class="form-control" data-ng-options="video for video in yt.videos" data-ng-model="yt.videoid"></select>
+
+		<br />
+
+		<div class="btn-group">
+			<button class="btn btn-default" data-ng-click="sendControlEvent(yt.YT_Event.PLAY)"><i class="fa fa-play"></i></button>
+			<button class="btn btn-default" data-ng-click="sendControlEvent(yt.YT_Event.PAUSE)"><i class="fa fa-pause"></i></button>
+			<button class="btn btn-default" data-ng-click="sendControlEvent(yt.YT_Event.STOP)"><i class="fa fa-stop"></i></button>
+		</div>
+	</div>
+
+	<br />
+</div>

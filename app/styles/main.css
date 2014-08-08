@@ -1,0 +1,157 @@
+/* Space out content a bit */
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+p { color: #555555; }
+label { cursor: pointer; }
+/* Custom page header */
+.header {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+/* Custom page footer */
+.footer {
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+#ui-view {
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1;
+
+	-webkit-transition: 0.3s linear all;
+	-moz-transition: 0.3s linear all;
+	-ms-transition: 0.3s linear all;
+	-o-transition: 0.3s linear all;
+}
+
+#ui-view.ng-enter {
+	height: 0px;
+	opacity: 0;
+}
+
+#ui-view.ng-enter.ng-enter-active
+#ui-view.ng-move.ng-move-active {
+	opacity: 1;
+}
+
+#ui-view.ng-leave {
+	-webkit-animation: 0.5s my_animation;
+	-moz-animation: 0.5s my_animation;
+	-o-animation: 0.5s my_animation;
+	animation: 0.5s my_animation;
+}
+
+@keyframes my_animation {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes my_animation {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes my_animation {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-o-keyframes my_animation {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.glyphicon:before {
+	visibility: visible;
+}
+
+input[type=checkbox].glyphicon {
+	visibility: hidden;
+	cursor: pointer;
+	color: #999999;
+}
+
+input[type=checkbox].glyphicon:checked {
+	visibility: hidden;
+	color: #3c763d;
+}
+
+#TodosList li {
+	padding: 3px 0px;
+}
+
+.show-code {
+	position: relative !important;
+	min-height: 50px !important;
+}
+
+.show-code button {
+	position: absolute !important;
+	right: 9px !important;
+}
+
+img#avatar {
+	width: 90px;
+	height: 90px;
+}
+
+#login_options {
+	text-align: center;
+}
+
+
+#login_options button {
+	width: 85px;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+	.container {
+		max-width: 730px;
+	}
+}
+
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  left: 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+	/* Remove the padding we set earlier */
+	.header,
+	.marketing,
+	.footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}
+

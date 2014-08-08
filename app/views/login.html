@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="text-center" data-ng-cloak>
+		<h2>Login</h2>
+		<p class="text-danger" data-ng-show="error">{{lg.error}}</p>
+		<form data-ng-submit="lg.login()">
+			<input type="email" ng-model="lg.user.email" placeholder="Email" class="form-control input-sm"><br>
+			<input type="password" ng-model="lg.user.password" placeholder="Password" class="form-control input-sm"><br>
+			<input type="submit" value="Log in" class="btn btn-primary" />
+		</form>
+		<!--div id="login_options" class="btn-group">
+			<button data-ng-click="auth.$login('github')" class="btn btn-default btn-lg"><i class="fa fa-github fa-3x"></i></button>
+			<button data-ng-click="auth.$login('twitter')" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-3x"></i></button>
+			<button data-ng-click="auth.$login('google')" class="btn btn-default btn-lg"><i class="fa fa-google fa-3x"></i></button>
+			<button data-ng-click="auth.$login('facebook')" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-3x"></i></button>
+		</div-->
+	</div>
+	<br />
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+		<h1>Bienvenido {{ currentUser.username }}</h1>
+    <form role="form" data-ng-submit="td.addTodo()">
+			<div class="input-group">
+        <input type="text" data-ng-model="td.todo" placeholder="What needs to be done?" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+			</div>
+    </form>
+
+		<hr/>
+
+		<ul id="TodosList" class="list-unstyled">
+        <li class="input-group" data-ng-repeat="todo in todos track by $index">
+	          <label for="{{todo.$id}}" class="input-group-addon">
+                <input type="checkbox" id="{{todo.$id}}" data-ng-model="todo.completed" data-ng-change="td.updateTodo(todo.$id)" class="glyphicon glyphicon-ok-sign" data-ng-class="{'text-muted': !todo.completed, 'text-success': todo.completed}" aria-label="Completed">
+            </label>
+            <input type="text" data-ng-model="todo.title" data-ng-disabled="todo.completed" data-ng-change="td.updateTodo(todo.$id)" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" data-ng-click="td.removeTodo(todo.$id)" aria-label="Remove">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </span>
+        </li>
+    </ul>
+
+		<ng-pluralize
+			class="label pull-right"
+			count="td.completed"
+			when="{ '0': 'All done!', one: 'Just one left!', other: '{{td.completed | number}} / {{td.total | number}}' }"
+		  ng-class="{'label-info': !td.completed, 'label-warning': td.completed === 1, 'label-danger': td.completed > 1}"
+			>items left</ng-pluralize>
+</div>

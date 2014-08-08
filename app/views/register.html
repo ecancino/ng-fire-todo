@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="text-center" data-ng-cloak>
+		<h2>Register</h2>
+		<p class="text-danger" data-ng-show="error">{{rg.error}}</p>
+		<form data-ng-submit="rg.register()">
+			<input type="email" data-ng-model="rg.user.email" placeholder="Email" class="form-control input-sm">
+			<br>
+			<input type="text" data-ng-model="rg.user.username" placeholder="Username" class="form-control input-sm">
+			<br>
+			<input type="password" data-ng-model="rg.user.password" placeholder="Password" class="form-control input-sm">
+			<br>
+			<input type="submit" value="Register" class="btn btn-primary" />
+		</form>
+	</div>
+	<br/>
+</div>

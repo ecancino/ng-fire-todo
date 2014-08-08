@@ -1,0 +1,43 @@
+<div class="container">
+    <form role="form" name="ContactFrm" data-ng-submit="submit()">
+        <div class="row">
+            <div class="form-group has-feedback" data-ng-class="{'has-success': ContactFrm.name.$valid, 'has-error': ContactFrm.name.$dirty && ContactFrm.name.$invalid}">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" data-ng-model="contact.name" placeholder="Name" class="form-control" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" data-ng-show="ContactFrm.name.$valid"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" data-ng-show="ContactFrm.name.$dirty && ContactFrm.name.$invalid"></span>
+                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+             </div>
+             <div class="form-group has-feedback" data-ng-class="{'has-success': ContactFrm.email.$valid, 'has-error': ContactFrm.email.$dirty && ContactFrm.email.$invalid}">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" data-ng-model="contact.email" placeholder="Email" class="form-control" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" data-ng-show="ContactFrm.email.$valid"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" data-ng-show="ContactFrm.email.$dirty && ContactFrm.email.$invalid"></span>
+                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+             </div>
+            <div class="form-group has-feedback" data-ng-class="{'has-success': ContactFrm.phone.$valid, 'has-error': ContactFrm.phone.$dirty && ContactFrm.phone.$invalid}">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" data-ng-model="contact.phone" placeholder="Phone" class="form-control" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" data-ng-show="ContactFrm.phone.$valid"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" data-ng-show="ContactFrm.phone.$dirty && ContactFrm.phone.$invalid"></span>
+                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            </div>
+            <div class="form-group has-feedback" data-ng-class="{'has-success': ContactFrm.birthday.$valid, 'has-error': ContactFrm.birthday.$dirty && ContactFrm.birthday.$invalid}">
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" data-ng-model="contact.birthday" placeholder="Birthday" class="form-control" min="2013-01-01" max="{{today}}" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" data-ng-show="ContactFrm.birthday.$valid"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" data-ng-show="ContactFrm.birthday.$dirty && ContactFrm.birthday.$invalid"></span>
+                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            </div>
+            <div class="form-group">
+                <div class="btn-group">
+                    <input type="reset" class="btn btn-warning" data-ng-click="contact = {}" value="Reset">
+                    <input type="submit" class="btn btn-success" value="Add">
+                </div>
+            </div>
+        </div>
+        <div class="well well-sm show-code">
+            <pre>{{ contact | json }}</pre>
+        </div>
+    </form>
+</div>
